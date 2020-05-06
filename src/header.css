@@ -1,0 +1,51 @@
+*{
+    font-family: Arial;
+}
+
+.header_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.logout_cart{
+    display:flex;
+    flex-direction: row;
+}
+
+.logo_text{
+    font-size: 28px;
+    text-shadow: 2px 2px 4px gray;
+}
+
+.logo_img{
+    position: relative;
+    top: 9px;
+    width: 38px;
+    height: 38px;
+    margin: 5px;
+}
+
+.logout_button{
+    background-color:#ffffff;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:17px;
+    padding:16px 31px;
+    text-shadow: 1px 1px 1px gray;
+	text-decoration:none;
+}
+
+.logout_button:hover{
+    text-decoration: underline black;
+}

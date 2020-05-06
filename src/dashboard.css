@@ -1,0 +1,27 @@
+.dashboard_main_div{
+    height: 100vh;
+   overflow-x: hidden; 
+}
+
+.dashboard_img {
+    height: 65vh;
+    width: 30vw;
+    margin: 10px;
+}
+
+.dashboard_img:hover {
+   padding: 3px 3px;
+   border: dodgerblue 3px solid;
+}
+
+.dash_link_text{
+    position: relative;
+    bottom: 100px;
+    left: 135px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.dash_link{
+    text-decoration: none;
+}
