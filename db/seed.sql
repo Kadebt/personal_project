@@ -25,4 +25,10 @@ create table cart (
 create table cart_products(
     cart_id int references cart(id)
     products_id int references products(id)
-)
+);
+
+CREATE TABLE reviews(
+id SERIAL PRIMARY KEY,
+user_id INT REFERENCES users(id),
+content VARCHAR(250)
+) 

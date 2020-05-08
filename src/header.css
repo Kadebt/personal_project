@@ -1,5 +1,7 @@
-*{
-    font-family: Arial;
+* {
+    font-family: coolvetica, sans-serif;
+    font-style: normal;
+    font-weight: 200;
 }
 
 .header_div{
@@ -7,11 +9,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    background-color: #111111;
+    height: 9vh;
 }
 
 .header_logo{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    color: #7a7a7a;
 }
 
 .logout_cart{
@@ -21,7 +27,8 @@
 
 .logo_text{
     font-size: 28px;
-    text-shadow: 2px 2px 4px gray;
+    text-shadow: none;
+    margin-left: 20px;
 }
 
 .logo_img{
@@ -33,19 +40,24 @@
 }
 
 .logout_button{
-    background-color:#ffffff;
+    background-color: #111111;
 	border-radius:28px;
-	border:1px solid #ffffff;
+	border:1px solid #111111;
 	display:inline-block;
 	cursor:pointer;
-	color:#000000;
+	color: #7a7a7a;
 	font-family:Arial;
 	font-size:17px;
     padding:16px 31px;
-    text-shadow: 1px 1px 1px gray;
+    text-shadow: 0px 0px 0px ;
 	text-decoration:none;
 }
 
 .logout_button:hover{
-    text-decoration: underline black;
+    text-decoration: underline whitesmoke;
+}
+
+.cart_button{
+    position: relative;
+    top: 14px;
 }

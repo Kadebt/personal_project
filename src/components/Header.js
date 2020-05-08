@@ -7,12 +7,6 @@ import '../header.css'
 
 const Header = (props) => {
 
-  useEffect(() => {
-    axios.get('/auth/check').then((res) => {
-        props.loginUser(res.data)
-    })
-  },[])
-
 
     const logout = () => {
         axios.delete('/auth/logout').then(() => {
@@ -25,12 +19,13 @@ const Header = (props) => {
     return(
         <div className='header_div'>
           <div className="header_logo">
-          <img className="logo_img" src="https://img.icons8.com/windows/32/000000/skateboard-truck.png"/>
-          <h1 className="logo_text">Lucxy Skate</h1>
+          <img className="logo_img" src="https://img.icons8.com/ultraviolet/40/000000/ramp.png"/>
+          {/* <img className="logo_img" src="https://img.icons8.com/windows/32/000000/skateboard-truck.png"/> */}
+          <h1 className="logo_text">Lucxy's Skate Shop</h1>
           </div>
 
         <div className="logout_cart">
-            <Link to="/cart"><img src="https://img.icons8.com/material-sharp/24/000000/shopping-cart.png"/></Link>
+            <Link className="cart_button" to="/cart"><img src="https://img.icons8.com/material-sharp/24/000000/shopping-cart.png"/></Link>
 
             
             <button className="logout_button" onClick={() => {

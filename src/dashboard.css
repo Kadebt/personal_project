@@ -1,25 +1,29 @@
 .dashboard_main_div{
     height: 100vh;
    overflow-x: hidden; 
+   background-image: url("https://lh3.googleusercontent.com/proxy/qAa0uNYyx4pC97Hh3g1AvosmSk2gJucgdU8F-9EUypE049IrBi26OZnABYxbGpubUu9WPlaCkpqX1W4BB_U8ju8l");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center top;
 }
 
 .dashboard_img {
     height: 65vh;
     width: 30vw;
     margin: 10px;
+    border-radius: 2%;
 }
 
 .dashboard_img:hover {
    padding: 3px 3px;
-   border: dodgerblue 3px solid;
+   border: #6fffe9 3px solid;
 }
 
 .dash_link_text{
     position: relative;
-    bottom: 100px;
-    left: 135px;
+    /* bottom: 100px; */
+    left: 155px;
     color: white;
-    text-shadow: 2px 2px 4px black;
 }
 
 .dash_link{

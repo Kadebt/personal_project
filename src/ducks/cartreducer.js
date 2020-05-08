@@ -3,6 +3,8 @@ const initialState = {
 }
 
 const ADD_TO_CART = 'ADD_TO_CART'
+const DELETE_FROM_CART = 'DELETE_FROM_CART'
+
 
 export function addToCart (cart){
     return{
@@ -11,10 +13,20 @@ export function addToCart (cart){
     }
 }
 
+export function deleteFromCart(){
+    return{
+        type: DELETE_FROM_CART,
+        payload: initialState,
+    }
+}
+
+
 export default function (state = initialState, action){
     switch (action.type) {
         case ADD_TO_CART:
-            return {...state, cart: [...state.cart, action.payload]}
+            return {...state, cart: [...state.cart, ...action.payload]}
+        case DELETE_FROM_CART:
+            return{...state, ...action.payload}
          default: 
             return state
     }

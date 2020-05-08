@@ -5,6 +5,7 @@ const session = require('express-session')
 const authcontroller = require('./authcontroller')
 const controller = require('./controller')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
+const stripe = require('stripe')('sk_test_GSu0sgBzAbw6A8tu24Pef6Dc006YACVeYv')
 
 const app = express()
 
@@ -31,6 +32,15 @@ app.use(
   app.get('/api/item/:id', controller.getItem)
   app.put('/api/cart/:id', controller.addToCart)
   app.get('/api/checkcart', controller.checkCart)
+  app.delete('/api/deletecart', controller.deleteCart)
+  app.put('api/quantity/:id', controller.addQuantity)
+
+  app.post("/stripe/checkout", controller.checkout)
+
+  app.get('/api/reviews', controller.getReviews)
+  app.post('/api/postreview', controller.postReviews)
+  app.put('/api/editreview/:id', controller.editReview)
+  app.delete('/api/deletereview/:id', controller.deleteReview)
 
   massive({
     connectionString: CONNECTION_STRING,

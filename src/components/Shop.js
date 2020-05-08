@@ -19,7 +19,7 @@ console.log(inventory)
 const addToCart = (id) => {
 
     axios.put(`api/cart/${id}`).then((res) =>{
-        props.addToCart(res.data)
+        console.log(res.data)
     })
 }
 
