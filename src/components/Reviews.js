@@ -34,11 +34,16 @@ const Reviews = (props) => {
     }
 
     const handleEdit = (id, content) => {
-        axios.put(`/axios/editreview/${id}`, { content }).then((res) => {
+        axios.put(`/api/editreview/${id}`, { content }).then((res) => {
             setReviews(res.data)
         })
     }
 
+   const handleDelete = (id) => {
+       axios.delete(`/api/deletereview/${id}`).then((res) => {
+           setReviews(res.data)
+       })
+   }
     
 
 
@@ -51,6 +56,7 @@ const Reviews = (props) => {
             key={e.id}
             id={e.id}
             handleEdit={handleEdit}
+            handleDelete={handleDelete}
             email={e.email}
             content={e.content}
             />

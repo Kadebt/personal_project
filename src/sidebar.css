@@ -1,0 +1,25 @@
+.sidebar_div{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: 9vw;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #343434;
+}
+
+.sidebar_link{
+    margin: 5px;
+    text-decoration: none;
+    color: #c4c4c4
+}
+
+.sidebar_h1{
+    color: whitesmoke;
+}
+
+.sidebar_link:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+}

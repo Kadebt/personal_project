@@ -1,0 +1,19 @@
+.mapped_products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 80vh;
+}
+
+.shop_img{
+    margin-left: 20px;
+    height: 18vh;
+    max-width: 25vh;
+}
+
+.product{
+    height: 40vh;
+    width: 30vh;
+}

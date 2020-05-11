@@ -42,6 +42,8 @@ const Dashboard = (props) => {
         <Link className="dash_link" to="/shop/5"><img className="dashboard_img" src="https://images.freeskatemag.com/wp-content/uploads/2018/11/20144717/deeddz_ollieoverbacklip_lisbon_marcelveldman_01.jpg"/><h1 className='dash_link_text'>HardWare</h1></Link>
         
         </Slider>
+
+        
         </div>
     )
 }

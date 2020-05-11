@@ -114,23 +114,24 @@ module.exports = {
     },
 
     editReview: async (req, res) => {
-        const db = db.app.get('db')
+        console.log(req.session)
+        const db = req.app.get('db')
 
         const { id } = req.params
         const { content } = req.body
 
         await db.edit_review([content, id])
-        const reviews = await db.get_posts()
+        const reviews = await db.get_reviews()
 
         res.status(200).send(reviews)
     },
 
     deleteReview: async (req, res) => {
-        const db = db.app.get('db')
+        const db = req.app.get('db')
 
-        const {review_id} = req.params
+        const {id} = req.params
 
-        await db.delete_review([review_id])
+        await db.delete_review([id])
 
         const reviews = await db.get_reviews()
         res.status(200).send(reviews)

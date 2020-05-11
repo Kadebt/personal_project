@@ -16,9 +16,14 @@ const UserReview = (props) => {
             }>Save</button>
             </div>
             :
+            <div>
             <p onClick={() =>{
                 setEditing(true)
-            }}>{props.content}</p>}
+            }}>{props.content}</p>
+            <button onClick={() => {
+                props.handleDelete(props.id)
+            }}>Delete</button>
+            </div>}
         </div>
     )
 

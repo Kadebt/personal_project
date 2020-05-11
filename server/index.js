@@ -6,6 +6,7 @@ const authcontroller = require('./authcontroller')
 const controller = require('./controller')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const stripe = require('stripe')('sk_test_GSu0sgBzAbw6A8tu24Pef6Dc006YACVeYv')
+const path = require('path')
 
 const app = express()
 
@@ -35,12 +36,17 @@ app.use(
   app.delete('/api/deletecart', controller.deleteCart)
   app.put('api/quantity/:id', controller.addQuantity)
 
-  app.post("/stripe/checkout", controller.checkout)
+  app.post(stripe, controller.checkout)
 
   app.get('/api/reviews', controller.getReviews)
   app.post('/api/postreview', controller.postReviews)
   app.put('/api/editreview/:id', controller.editReview)
   app.delete('/api/deletereview/:id', controller.deleteReview)
+
+    app.use(express.static(__dirname + '/../build'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+  })
 
   massive({
     connectionString: CONNECTION_STRING,

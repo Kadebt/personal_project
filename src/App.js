@@ -26,7 +26,7 @@ function App(props) {
   }
 
   function reviews(){
-    if(props.location.pathname === '/' || props.location.pathname === '/register' || props.location.pathname === '/dashboard'){
+    if(props.location.pathname === '/' || props.location.pathname === '/register'){
       return null
     } else {
       return <Reviews/>

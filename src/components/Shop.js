@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { addToCart } from '../ducks/cartreducer'
 import { connect } from 'react-redux'
+import '../shop.css'
 // import { Link } from 'react-router-dom'
 
 const Shop = (props) => {
@@ -28,8 +29,8 @@ const handleimgClick = (id) => {
 }
 const mappedProducts = inventory.map((e) => {
     return(
-        <div>
-            <img onClick={() => {
+        <div className="product">
+            <img className="shop_img" onClick={() => {
                 handleimgClick(e.id)
             }} src={e.img} alt="img"/>
             <p>{e.name}</p>
@@ -44,7 +45,7 @@ const mappedProducts = inventory.map((e) => {
 })
     return(
         
-        <div>
+        <div className="mapped_products">
             {mappedProducts}
         </div>
     )
