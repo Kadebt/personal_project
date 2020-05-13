@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { addToCart } from '../ducks/cartreducer'
 import { connect } from 'react-redux'
+import '../fullitem.css'
 
 
 const FullItem = (props) => {
@@ -20,12 +21,12 @@ const FullItem = (props) => {
 
         const mappedItem = item.map((e) => {
             return(
-                <div>
-                    <img src={e.img}/>
-                    <h1>{e.name}</h1>
-                    <h1>{e.content}</h1>
-                    <h1>{e.price}</h1>
-                    <button onClick={() => {
+                <div className='fullitemdiv'> 
+                    <img className='fullitemimg' src={e.img}/>
+                    <h1 className='fullitemname'>{e.name}</h1>
+                    <h1 className='fullitemcontent'>{e.content}</h1>
+                    <h1 className='fullitemprice'>{e.price}</h1>
+                    <button className='fullitembutton' onClick={() => {
                         props.addToCart()
                     }}>Add to cart</button>
                 </div>

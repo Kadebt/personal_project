@@ -22,7 +22,7 @@ const Header = (props) => {
         <div className='header_div'>
           <div className="header_logo">
       
-          <Link className='header_link' to='/'>
+          <Link className='header_link' to='/dashboard'>
           <img src={wheel} className='logo_img'/>
           <h1 className="logo_text">7AM Skate Shop</h1>
           </Link>
