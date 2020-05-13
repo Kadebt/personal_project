@@ -10,13 +10,12 @@ const Shop = (props) => {
 
     useEffect(() => {
         const id = props.match.params.id
-        
+        console.log(id)
         axios.get(`/api/inventory/${id}`).then((res) => {
             setInventory(res.data)
     })
-},[])
+},[props.match.params.id])
 
-console.log(inventory)
 const addToCart = (id) => {
 
     axios.put(`api/cart/${id}`).then((res) =>{
@@ -33,10 +32,10 @@ const mappedProducts = inventory.map((e) => {
             <img className="shop_img" onClick={() => {
                 handleimgClick(e.id)
             }} src={e.img} alt="img"/>
-            <p>{e.name}</p>
-            <p>{e.content}</p>
-            <p>${e.price}</p>
-            <button onClick={() => {
+            <p className='product-info'>{e.name}</p>
+            <p className='product-info'>{e.content}</p>
+            <p className='product-info'>${e.price}</p>
+            <button className='shop_button' onClick={() => {
                 addToCart(e.id)
             }}>Add to cart</button>
 

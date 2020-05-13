@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import StripeCheckout from 'react-stripe-checkout'
 import { toast } from 'react-toastify'
+import '../cart.css'
 // import axios from 'axios'
 
 const Cart = (props) => {
@@ -14,11 +15,11 @@ const Cart = (props) => {
         })
     },[])
 
-    // const handleAdd = (id) => {
-    //     axios.put(`/api/quantity/${id}`).then((res) => {
-    //         props.cart.cart.price = res.data
+
+    // const handleItemDelete = (id) => {
+    //     axios.delete(`/api/deleteitem/${id}`).then((res) => {
+    //         props.deleteitem(res.data)
     //     })
-     
     // }
 
     const cartMapped = props.cart.cart.map((e) => {
@@ -27,15 +28,10 @@ const Cart = (props) => {
             <img src={e.img}/>
             <p>{e.price}</p>
             <p>{e.name}</p>
-            {/* <button>
-                <img src="https://img.icons8.com/pastel-glyph/64/000000/minus.png"/> */}
-            {/* </button>
-            <button onClick={() => {
-                handleAdd(e.id)
-            }}>
-                <img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png"/>
-            </button> */}
-            {/* <button>Delete</button> */}
+            
+            {/* <button onClick={() => {
+                handleItemDelete(props.cart.cart.id)
+            }}>Delete</button> */}
             </div>
         )
     })
@@ -52,9 +48,7 @@ const Cart = (props) => {
         for (let i = 0; i < props.cart.cart.length; i++){
             total = total + props.cart.cart[i].price
         }
-        return(
-            <div>{total}</div>
-        )
+        return total
     }
 
     toast.configure()
@@ -62,9 +56,10 @@ const Cart = (props) => {
     async function handleToken(token){
        const body = {
            token,
-           product: props.cart.cart
+           product: totalPrice(props.cart.cart)
        }
       const res = await axios.post('/stripe/checkout', body)
+      clearCart()
       const { status } = res.data
       if (status === 'success') {
           toast('Success!', {type: 'success'})
@@ -78,9 +73,12 @@ const Cart = (props) => {
     return(
         <div>
             <h1>Your Cart</h1>
+            <div className='cart_items'>
             {cartMapped}
-            {totalPrice(props.cart.cart)}
-            <button onClick={() => {
+            </div>
+            <div className='checkout'>
+            <h1 className='total'>{totalPrice(props.cart.cart)}</h1>
+            <button className='clearcart' onClick={() => {
                 clearCart()
             }}>Clear Cart</button>
             <StripeCheckout
@@ -91,6 +89,7 @@ const Cart = (props) => {
                 shippingAddress
                 name='CheckOut'
             />
+            </div>
         
         
         </div>
@@ -100,4 +99,4 @@ const Cart = (props) => {
 
 const mapStateToProps = (reduxState) => reduxState
 
-export default connect(mapStateToProps, {addToCart, deleteFromCart})(Cart)
+export default connect(mapStateToProps, {addToCart, deleteFromCart })(Cart)

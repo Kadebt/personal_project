@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
 
 function App(props) {
   function conditional(){
-    if (props.location.pathname === '/' || props.location.pathname === '/register'){
+    if (props.location.pathname === '/register'){
       return null
     } else {
       return <Header/>

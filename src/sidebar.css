@@ -5,21 +5,32 @@
     width: 9vw;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100vh;
     background-color: #343434;
+    z-index: -1;
 }
 
 .sidebar_link{
+    position: relative;
+    bottom: 80px;
     margin: 5px;
     text-decoration: none;
     color: #c4c4c4
 }
 
 .sidebar_h1{
+    position: relative;
+    bottom: 80px;
     color: whitesmoke;
 }
 
 .sidebar_link:hover{
     color: whitesmoke;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 500px){
+    .sidebar_div{
+        width: 21vw;
+    }
 }

@@ -36,7 +36,7 @@ app.use(
   app.delete('/api/deletecart', controller.deleteCart)
   app.put('api/quantity/:id', controller.addQuantity)
 
-  app.post(stripe, controller.checkout)
+  app.post('/stripe/checkout', controller.checkout)
 
   app.get('/api/reviews', controller.getReviews)
   app.post('/api/postreview', controller.postReviews)

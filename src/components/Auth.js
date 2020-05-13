@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { loginUser } from '../ducks/reducer'
 import { connect } from 'react-redux'
+import '../loginregister.css'
 
 
 
@@ -26,8 +27,10 @@ const Auth = (props) => {
         })
     }
     return(
-        <div>
-        <input
+      <div className='login-body'>
+        <div className='login-div'>
+          <h1 className='login-header'>Login</h1>
+        <input className='input'
             maxLength="100"
             placeholder="Email"
             name="email"
@@ -36,7 +39,7 @@ const Auth = (props) => {
             }}
           />
 
-            <input
+            <input className='input'
                 type="password"
                 maxLength="20"
                 placeholder="Password"
@@ -47,14 +50,15 @@ const Auth = (props) => {
               />
 
 
-              <button
+              <button className='login'
               onClick={() => {
                 handleLogin()
               }}
             >
               Log in
             </button>
-        <Link to='/register'>Register</Link>
+        <Link className='login-link' to='/register'>Register</Link>
+        </div>
         </div>
     )
 }

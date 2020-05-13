@@ -75,3 +75,9 @@
     height: 32px;
     width: 32px;
 }
+
+@media screen and (max-width: 500px){
+    .logo_text{
+        font-size: 18px ;
+    }
+}

@@ -1,3 +1,5 @@
+const stripe = require('stripe')('sk_test_GSu0sgBzAbw6A8tu24Pef6Dc006YACVeYv')
+
 module.exports = {
     getProducts: async (req, res) => {
         const db = req.app.get('db')
@@ -69,7 +71,7 @@ module.exports = {
 
        
         const charge = await stripe.charges.create(
-            {amount: product.price * 100,
+            {amount: product * 100,
              currency: 'usd',
              receipt_email: token.email,
              description: 'Purchased',
@@ -85,7 +87,7 @@ module.exports = {
              }
             }
         )
-       if(console.log("charge", {charge})){
+       if({charge}){
       return res.status('success').send({status})}
       else {
           res.status('Failed').send(status)

@@ -3,6 +3,7 @@ import axios from 'axios'
 import {loginUser} from '../ducks/reducer'
 import { connect } from 'react-redux'
 import UserReview from './UserReview'
+import '../reviews.css'
 // import { withRouter } from 'react-router-dom'
 
 const Reviews = (props) => {
@@ -64,10 +65,10 @@ const Reviews = (props) => {
     })
 
     return(
-        <div>
-            <h1>Tell Us What You Think</h1>
-            <input onChange={e => setUserInput(e.target.value)} value={userInput}/>
-            <button onClick={() => {handleClick()
+        <div className='review_div'>
+            <h1 className='reviewheader'>Tell Us What You Think</h1>
+            <input className='review_input' onChange={e => setUserInput(e.target.value)} value={userInput}/>
+            <button className='addreview' onClick={() => {handleClick()
             }}>Add Review</button>
 
             <div>{mappedReviews}</div>

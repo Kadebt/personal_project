@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../reviews.css'
 
 const UserReview = (props) => {
     const [editing, setEditing] = useState(false)
@@ -20,7 +21,7 @@ const UserReview = (props) => {
             <p onClick={() =>{
                 setEditing(true)
             }}>{props.content}</p>
-            <button onClick={() => {
+            <button className='deletebutton' onClick={() => {
                 props.handleDelete(props.id)
             }}>Delete</button>
             </div>}

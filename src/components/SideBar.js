@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
 import '../sidebar.css'
 
 const SideBar = (props) => {
@@ -17,4 +18,4 @@ const SideBar = (props) => {
     )
 }
 
-export default SideBar
+export default withRouter(SideBar)

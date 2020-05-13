@@ -1,0 +1,68 @@
+.review_input{
+    padding-right: 8vw;
+    padding-bottom: 5vh;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #c4c4c4;
+    color: #000000;
+    border-style: solid;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    /* position: relative;
+    left: 65px; */
+}
+
+.addreview{
+    background-color:#595959;
+	border-radius:10px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 12px;
+	padding:10px 18px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #1a1a1a;
+    margin: 10px;
+    /* position: relative;
+    left: 65px;
+    top: 40px; */
+}
+
+.review_div{
+    background-color: #232323 ;
+    color: #c4c4c4;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 99vw;
+}
+
+.reviewheader{
+    color: whitesmoke;
+    padding-top: 10px;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.deletebutton{
+    background-color:#595959;
+	border-radius:28px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:7px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #0f0f0f;
+}
